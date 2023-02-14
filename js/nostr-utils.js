@@ -25,7 +25,7 @@ const npub2hexa = (npub) => {
   }
 }
 
-// encode hex to nip19 ('npub)
+// encode hex to nip19 ('npub')
 const hexa2npub = (hex) => {
   const data = hexToBytes(hex)
   const words = bech32.bech32.toWords(data)
