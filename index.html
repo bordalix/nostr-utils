@@ -20,19 +20,14 @@
     <meta property="twitter:description" content="Nostr utils" />
     <meta property="twitter:image" content="/img/nostr-utils_twitter.png" />
     <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="https://nostr-utils.pages.dev/img/utils.png"
-      type="image/x-icon" />
+    <link rel="shortcut icon" href="img/utils.png" type="image/x-icon" />
     <!-- CSS -->
-    <link rel="stylesheet" href="https://nostr-utils.pages.dev/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Lightning -->
     <meta name="lightning" content="bordalix@getalby.com" />
     <!-- PWA -->
     <meta name="theme-color" content="#ffffff" />
-    <link
-      rel="apple-touch-icon"
-      href="https://nostr-utils.pages.dev/img/utils.png" />
+    <link rel="apple-touch-icon" href="img/utils.png" />
     <style>
       .projects {
         display: flex;
@@ -40,12 +35,12 @@
         justify-content: space-between;
       }
       .projects div {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        margin: 0.5rem 0;
         padding: 1rem;
         width: 130px;
+      }
+      .projects div p {
+        text-align: center;
       }
       .projects div img {
         height: 30px;
@@ -70,23 +65,27 @@
           /></a>
         </p>
       </div>
-      <p>Some utils made for/with Nostr.</p>
+      <p>Some utils made for/with Nostr</p>
       <div class="projects">
         <div class="box">
-          <img src="https://nostr-utils.pages.dev/img/backup.png" />
+          <p><img src="img/backup.png" /></p>
           <p><a href="https://nostr-backup.pages.dev">Backup</a></p>
+          <p>Fetch and backup your events</p>
         </div>
         <div class="box">
-          <img src="https://nostr-utils.pages.dev/img/restore.png" />
+          <p><img src="img/restore.png" /></p>
           <p><a href="https://nostr-restore.pages.dev">Restore</a></p>
+          <p>Restore your nostr backup</p>
         </div>
         <div class="box">
-          <img src="https://nostr-utils.pages.dev/img/broadcast.png" />
+          <p><img src="img/broadcast.png" /></p>
           <p><a href="https://nostr-broadcast.pages.dev">Broadcast</a></p>
+          <p>Fetch and broadcast your events</p>
         </div>
         <div class="box">
-          <img src="https://nostr-utils.pages.dev/img/chesstr.png" />
+          <p><img src="img/chesstr.png" /></p>
           <p><a href="https://chesstr.pages.dev">Chesstr</a></p>
+          <p>A chessboard powered by Nostr</p>
         </div>
       </div>
     </main>
