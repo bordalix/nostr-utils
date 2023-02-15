@@ -49,6 +49,10 @@ ul {
   background-color: rgba(183, 177, 168, 0.3);
 }
 
+.red {
+  background-color: rgba(229, 60, 8, 0.3);
+}
+
 .box button {
   background-color: rgba(0, 0, 0, 0.813);
   color: white;
