@@ -1,5 +1,4 @@
 body {
-  padding: 8px;
   margin: 0 auto;
   max-width: 340px;
   width: 100%;
@@ -32,7 +31,6 @@ details {
 p,
 li {
   line-height: 1.33;
-  margin-bottom: 1rem;
 }
 
 ul {
@@ -62,4 +60,8 @@ footer p {
   font-size: 0.8rem;
   margin: 0;
   text-align: center;
+}
+
+progress {
+  width: 140px;
 }
