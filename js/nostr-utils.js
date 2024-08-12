@@ -3,8 +3,7 @@ function hexToBytes(hex) {
   if (typeof hex !== 'string') {
     throw new TypeError('hexToBytes: expected string, got ' + typeof hex)
   }
-  if (hex.length % 2)
-    throw new Error('hexToBytes: received invalid unpadded hex' + hex.length)
+  if (hex.length % 2) throw new Error('hexToBytes: received invalid unpadded hex' + hex.length)
   const array = new Uint8Array(hex.length / 2)
   for (let i = 0; i < array.length; i++) {
     const j = i * 2
@@ -34,8 +33,7 @@ const hexa2npub = (hex) => {
 }
 
 // parse inserted pubkey
-const parsePubkey = (pubkey) =>
-  pubkey.match('npub1') ? npub2hexa(pubkey) : pubkey
+const parsePubkey = (pubkey) => (pubkey.match('npub1') ? npub2hexa(pubkey) : pubkey)
 
 // download js file
 const downloadFile = (data, fileName) => {
@@ -72,7 +70,8 @@ const fetchFromRelay = async (relay, filter, events) =>
           if (events[id]) return
           else events[id] = data
           // show how many events were found until this moment
-          $('#events-found').text(`${Object.keys(events).length} events found`)
+          const numEvents = Object.keys(events).length
+          $('#events-found').text(`${numEvents} ${numEvents > 1 ? 'events' : 'event'} found`)
         }
         // end of subscription messages
         if (msgType === 'EOSE' && subscriptionId === subsId) resolve()
@@ -88,9 +87,7 @@ const getEvents = async (filter) => {
   // events hash
   const events = {}
   // wait for all relays to finish
-  await Promise.allSettled(
-    relays.map((relay) => fetchFromRelay(relay, filter, events))
-  )
+  await Promise.allSettled(relays.map((relay) => fetchFromRelay(relay, filter, events)))
   // return data as an array of events
   return Object.keys(events).map((id) => events[id])
 }
