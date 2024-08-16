@@ -92,6 +92,17 @@ const getEvents = async (filter) => {
   return Object.keys(events).map((id) => events[id])
 }
 
+const getEvent = async (filter) => {
+  // events hash
+  const events = {}
+  // return as soon as one relay has found the event
+  await new Promise((resolve) => {
+    relays.map((relay) => fetchFromRelay(relay, filter, events).then(resolve))
+  })
+  // return event
+  return Object.keys(events).map((id) => events[id])[0]
+}
+
 // send events to a relay, returns a promisse
 const sendToRelay = async (relay, data) =>
   new Promise((resolve, reject) => {
