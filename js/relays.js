@@ -43,4 +43,5 @@ const relays = [
   'wss://relay.snort.social',
   'wss://relayer.fiatjaf.com',
   'wss://rsslay.fiatjaf.com',
+  'wss://relay.primal.net',
 ]
