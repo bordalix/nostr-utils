@@ -15,6 +15,17 @@ const hexToBytes = (hex) => {
   return array
 }
 
+const nip52hexa = async (addr) => {
+  if (!/^.+@.+$/.test(addr)) return ''
+  const [name, domain] = pubkey.split('@')
+  const url = `https://${domain}/.well-known/nostr.json?name=${name}`
+  const res = await fetch(url)
+  if (!res.ok) return ''
+  const data = await res.json()
+  if (!data || !data.names || !data.names[name]) return ''
+  return data.names[name]
+}
+
 // decode nip19 ('npub') to hex
 const npub2hexa = (npub) => {
   let { prefix, words } = bech32.bech32.decode(npub, 90)
